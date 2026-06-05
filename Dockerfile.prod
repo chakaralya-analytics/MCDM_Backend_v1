@@ -1,0 +1,54 @@
+# ── Stage 1: build dependencies ──────────────────────────────────────────────
+FROM python:3.12-slim AS builder
+
+WORKDIR /build
+
+# System deps required to compile psycopg2 and other C extensions.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libpq-dev \
+ && rm -rf /var/lib/apt/lists/*
+
+COPY ahp_project/requirements.txt .
+RUN pip install --upgrade pip \
+ && pip install --no-cache-dir --prefix=/install -r requirements.txt
+
+
+# ── Stage 2: production image ─────────────────────────────────────────────────
+FROM python:3.12-slim
+
+# Security: run as non-root user.
+RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
+
+WORKDIR /app
+
+# Runtime system deps only (libpq for psycopg2 at runtime).
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpq5 \
+ && rm -rf /var/lib/apt/lists/*
+
+# Copy installed Python packages from builder stage.
+COPY --from=builder /install /usr/local
+
+# Copy application source.
+COPY ahp_project/ .
+
+# Create runtime directories and set ownership.
+RUN mkdir -p logs staticfiles media \
+ && chown -R appuser:appgroup /app
+
+USER appuser
+
+EXPOSE 8080
+
+# SECRET_KEY is required by settings.py even during collectstatic.
+# Pass a non-empty dummy at build time; the real value is set via Cloud Run env vars.
+ARG SECRET_KEY=build-time-placeholder-not-used-at-runtime
+ENV SECRET_KEY=${SECRET_KEY}
+
+# Collect static files at build time — USE_SQLITE=True is scoped to this RUN
+# step only so it never leaks into the runtime environment.
+RUN USE_SQLITE=True python manage.py collectstatic --noinput
+
+# Run migrations then start Gunicorn. PORT is injected by Cloud Run at runtime.
+CMD ["sh", "-c", "python manage.py migrate --noinput && exec gunicorn ahp_project.wsgi:application --config gunicorn.conf.py"]

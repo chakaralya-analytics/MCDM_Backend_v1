@@ -1,0 +1,115 @@
+version: '3.9'
+
+# Production stack — all services share the 'app' network.
+# Secrets and credentials must be supplied via .env (never committed).
+# Run: docker compose -f docker-compose.prod.yml up -d
+
+x-app-base: &app-base
+  image: ahp-api:prod
+  build:
+    context: .
+    dockerfile: Dockerfile.prod
+  env_file: .env
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+  restart: unless-stopped
+  networks:
+    - app
+
+services:
+
+  # ── PostgreSQL ──────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    env_file: .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - app
+
+  # ── Redis ───────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - app
+
+  # ── Django / Gunicorn ───────────────────────────────────────────────────────
+  web:
+    <<: *app-base
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             gunicorn ahp_project.wsgi:application --config gunicorn.conf.py"
+    ports:
+      - '8000:8000'
+    volumes:
+      - static_files:/app/staticfiles
+      - media_files:/app/media
+      - app_logs:/app/logs
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8000/health/live || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # ── Celery worker ───────────────────────────────────────────────────────────
+  celery_worker:
+    <<: *app-base
+    command: celery -A ahp_project worker --loglevel=info --concurrency=4
+    volumes:
+      - app_logs:/app/logs
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A ahp_project inspect ping -d celery@$$HOSTNAME"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # ── Celery Beat (scheduler) ─────────────────────────────────────────────────
+  celery_beat:
+    <<: *app-base
+    command: celery -A ahp_project beat --loglevel=info --scheduler django_celery_beat.schedulers:DatabaseScheduler
+    volumes:
+      - app_logs:/app/logs
+    restart: unless-stopped
+
+  # ── Flower (Celery monitoring) ──────────────────────────────────────────────
+  flower:
+    <<: *app-base
+    command: celery -A ahp_project flower --port=5555
+    ports:
+      - '5555:5555'
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  static_files:
+  media_files:
+  app_logs:
+
+networks:
+  app:
+    driver: bridge

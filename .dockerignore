@@ -1,0 +1,36 @@
+# ── Python bytecode ───────────────────────────────────────────────────────────
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# ── Git / editor ──────────────────────────────────────────────────────────────
+.git/
+.gitignore
+.DS_Store
+
+# ── Secrets (never in image) ──────────────────────────────────────────────────
+ahp_project/.env
+ahp_project/.env.local
+
+# ── SQLite — production always uses PostgreSQL ─────────────────────────────────
+ahp_project/db.sqlite3
+ahp_project/sqlite_data.json
+
+# ── Testing — not needed at runtime ───────────────────────────────────────────
+ahp_project/tests/
+ahp_project/pytest.ini
+ahp_project/pyproject.toml
+ahp_project/.python-version
+ahp_project/uv.lock
+
+# ── Generated at runtime — mounted as volumes or rebuilt on start ──────────────
+ahp_project/logs/
+ahp_project/staticfiles/
+ahp_project/media/
+
+# ── Docs and examples ─────────────────────────────────────────────────────────
+README.md
+ahp_project/README.md
+ahp_project/.env.example
+ahp_project/.dockerignore

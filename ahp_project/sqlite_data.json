@@ -1,0 +1,1750 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$720000$eZmgJsNgltkdF4f6oDOmy6$Uvf0V0wwHU0mfeKiYfUCrmiikjbbcWjbLwzp0auxLGg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "Mriganka",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2024-08-03T11:05:58.297Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$W1QcWPWHJgWez52UdaDiC4$4vGBatF6NTD+A1JtdYvUrkWQ4U9j5hn4EMvb8xRBp9o=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "test",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-24T02:30:45.202Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$9emCVH2jWbMS4TbTdURYw6$7zpTyZ5e6p/SbLMudMUCiMgmAmHdyv5XaexcsgNXohY=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "ahp_project-admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "sudharsann@yahoo.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-05-24T04:07:36.191Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$kGqNDctYhOh06fb7gRLZDj$RBVG2D8A8Wfm1P6v4MfrDp44W+sQPLffpxNdROdBTDc=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "arvin-samuel-a",
+    "first_name": "",
+    "last_name": "",
+    "email": "arvin.samuel@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-06-06T17:01:26.301Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$mejLxyxSxKWdqB88FssX1X$3eXaDd1NTA9pxoZ9zy4fUe4XAr/CujPQy0Gz9x+V60k=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "hello",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-09T19:44:19.384Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "project_name": "Car Selection",
+    "criteria": [
+      "Price",
+      "Fuel Efficiency",
+      "Performance"
+    ],
+    "alternatives": [
+      "Car A",
+      "Car B",
+      "Car C"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        3.0,
+        5.0
+      ],
+      [
+        0.333,
+        1.0,
+        3.0
+      ],
+      [
+        0.2,
+        0.333,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          0.5,
+          1.0,
+          2.0
+        ],
+        [
+          0.333,
+          0.5,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          0.5,
+          0.333
+        ],
+        [
+          2.0,
+          1.0,
+          0.5
+        ],
+        [
+          3.0,
+          2.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          3.0,
+          2.0
+        ],
+        [
+          0.333,
+          1.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.0,
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0,
+      1,
+      2
+    ],
+    "ranking_list": [
+      "Car A",
+      "Car B",
+      "Car C"
+    ],
+    "alternative_scores": [
+      0.44248244166374207,
+      0.2829848527908325,
+      0.2745327055454254
+    ],
+    "weights": [
+      0.6370486617088318,
+      0.2582375109195709,
+      0.1047137975692749
+    ],
+    "consistency_ratio": 3.4594030380249023
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "project_name": "My AHP Project",
+    "criteria": [
+      "Criteria1",
+      "Criteria2",
+      "Criteria3"
+    ],
+    "alternatives": [
+      "Alt1",
+      "Alt2",
+      "Alt3"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        2.0,
+        3.0
+      ],
+      [
+        0.5,
+        1.0,
+        2.0
+      ],
+      [
+        0.33,
+        0.5,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0,
+          2.0,
+          3.0
+        ],
+        [
+          0.5,
+          1.0,
+          2.0
+        ],
+        [
+          0.33,
+          0.5,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          3.0,
+          2.0
+        ],
+        [
+          0.33,
+          1.0,
+          0.5
+        ],
+        [
+          0.5,
+          2.0,
+          1.0
+        ]
+      ],
+      [
+        [
+          1.0,
+          2.0,
+          0.5
+        ],
+        [
+          0.5,
+          1.0,
+          0.33
+        ],
+        [
+          2.0,
+          3.0,
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0,
+      2,
+      1
+    ],
+    "ranking_list": [
+      "Alt1",
+      "Alt3",
+      "Alt2"
+    ],
+    "alternative_scores": [
+      0.5004123449325562,
+      0.2353728860616684,
+      0.26421481370925903
+    ],
+    "weights": [
+      0.539983868598938,
+      0.2970953583717346,
+      0.1629207879304886
+    ],
+    "consistency_ratio": 1.3602429628372192
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "project_name": "Hello",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 4,
+  "fields": {
+    "user": 4,
+    "project_name": "Sample",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        4.0,
+        5.0
+      ],
+      [
+        0.25,
+        1.0,
+        1.0
+      ],
+      [
+        0.2,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.6908352971076965,
+      0.1603287160396576,
+      0.14883600175380707
+    ],
+    "consistency_ratio": 3.9625275135040283
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 5,
+  "fields": {
+    "user": 4,
+    "project_name": "Sample",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        2.0,
+        2.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "consistency_ratio": 0.6465517282485962
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 6,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Delivery",
+      "Quality",
+      "Price",
+      "Longitivity"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        3.0,
+        1.0,
+        0.5
+      ],
+      [
+        0.3333333333333333,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        2.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.28386878967285156,
+      0.18761776387691498,
+      0.23141145706176758,
+      0.2971019446849823
+    ],
+    "consistency_ratio": 0.22141721844673157
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 7,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery Time",
+      "Production Capability"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        3.0,
+        1.0,
+        2.0
+      ],
+      [
+        0.3333333333333333,
+        1.0,
+        0.5,
+        2.0
+      ],
+      [
+        1.0,
+        2.0,
+        1.0,
+        2.0
+      ],
+      [
+        0.5,
+        0.5,
+        0.5,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3632228970527649,
+      0.1787654459476471,
+      0.3198115825653076,
+      0.1382000744342804
+    ],
+    "consistency_ratio": 0.5526657700538635
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 8,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery Time",
+      "Production Capability"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      0.9999998807907104
+    ],
+    "weights": [
+      0.4999999701976776,
+      0.1666666567325592,
+      0.1666666567325592,
+      0.1666666567325592
+    ],
+    "consistency_ratio": -1.7660636331129353e-07
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 9,
+  "fields": {
+    "user": 4,
+    "project_name": "Hello",
+    "criteria": [
+      "a",
+      "b",
+      "c"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 10,
+  "fields": {
+    "user": 4,
+    "project_name": "Sampling",
+    "criteria": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 11,
+  "fields": {
+    "user": 4,
+    "project_name": "Sampling",
+    "criteria": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 12,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        2.0,
+        2.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "consistency_ratio": 0.6465517282485962
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 13,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        2.0,
+        2.0
+      ],
+      [
+        0.5,
+        1.0,
+        4.0
+      ],
+      [
+        0.5,
+        0.25,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.47423017024993896,
+      0.37639668583869934,
+      0.1493731439113617
+    ],
+    "consistency_ratio": 1.4678758382797241
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 14,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        2.0,
+        2.0
+      ],
+      [
+        0.5,
+        1.0,
+        2.0
+      ],
+      [
+        0.5,
+        0.5,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.4933859705924988,
+      0.31081369519233704,
+      0.195800319314003
+    ],
+    "consistency_ratio": 0.8158435225486755
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 15,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        4.0,
+        4.0
+      ],
+      [
+        0.25,
+        1.0,
+        2.0
+      ],
+      [
+        0.25,
+        0.5,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      0.9999999403953552
+    ],
+    "weights": [
+      0.6607614755630493,
+      0.20812676846981049,
+      0.13111169636249542
+    ],
+    "consistency_ratio": 3.3213024139404297
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 16,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Delivery",
+      "Price"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        4.0,
+        3.0
+      ],
+      [
+        0.25,
+        1.0,
+        0.5
+      ],
+      [
+        0.3333333333333333,
+        2.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.6250131130218506,
+      0.13649982213974,
+      0.238487109541893
+    ],
+    "consistency_ratio": 2.6154630184173584
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 17,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        4.0,
+        2.0
+      ],
+      [
+        0.25,
+        1.0,
+        0.5
+      ],
+      [
+        0.5,
+        2.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      0.9999999403953552
+    ],
+    "weights": [
+      0.5714285373687744,
+      0.1428571343421936,
+      0.2857142686843872
+    ],
+    "consistency_ratio": 1.93965482711792
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 18,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        4.0,
+        2.0
+      ],
+      [
+        0.25,
+        1.0,
+        0.5
+      ],
+      [
+        0.5,
+        2.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      0.9999999403953552
+    ],
+    "weights": [
+      0.5714285373687744,
+      0.1428571343421936,
+      0.2857142686843872
+    ],
+    "consistency_ratio": 1.93965482711792
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 19,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 20,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 21,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        2.0,
+        2.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0
+      ],
+      [
+        0.5,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.5,
+      0.25,
+      0.25
+    ],
+    "consistency_ratio": 0.6465517282485962
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 22,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 23,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 24,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 25,
+  "fields": {
+    "user": 4,
+    "project_name": "Bolts",
+    "criteria": [
+      "Quality",
+      "Price",
+      "Delivery"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 26,
+  "fields": {
+    "user": 4,
+    "project_name": "P",
+    "criteria": [
+      "A",
+      "B",
+      "C"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "ahp_api.ahpproject",
+  "pk": 27,
+  "fields": {
+    "user": 4,
+    "project_name": "a",
+    "criteria": [
+      "a",
+      "b",
+      "c"
+    ],
+    "alternatives": [
+      "Alternative 1"
+    ],
+    "pairwise_matrix": [
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ],
+      [
+        1.0,
+        1.0,
+        1.0
+      ]
+    ],
+    "alternative_matrices": [
+      [
+        [
+          1.0
+        ]
+      ]
+    ],
+    "ranking_data": [
+      0
+    ],
+    "ranking_list": [
+      "Alternative 1"
+    ],
+    "alternative_scores": [
+      1.0
+    ],
+    "weights": [
+      0.3333333432674408,
+      0.3333333432674408,
+      0.3333333432674408
+    ],
+    "consistency_ratio": 0.0
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "406722ac6ae80222f0c65245e546fd87b024a9be",
+  "fields": {
+    "user": 5,
+    "created": "2025-06-09T19:44:20.173Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "70fdb4f8dea0319556f5b97544a3c4048a857cbb",
+  "fields": {
+    "user": 4,
+    "created": "2025-06-06T18:23:02.629Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "8bc8c59f2c7d9063e79bd29a702c4c41954b0155",
+  "fields": {
+    "user": 2,
+    "created": "2025-05-24T02:30:46.267Z"
+  }
+},
+{
+  "model": "authtoken.token",
+  "pk": "be2fff981645fdb335b467d1e95a1a132f8652b4",
+  "fields": {
+    "user": 1,
+    "created": "2024-08-03T11:11:19.514Z"
+  }
+}
+]
